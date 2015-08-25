@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        createNormalShadowWithShadowOffset()
-        //createTrapezoidalShadowToImage()
+        //createNormalShadowWithShadowOffset()
+        createTrapezoidalShadowToImage()
         //createOverallShadowToImage()
         //createEllepticalShadowBeneathImage()
         //createRoundedCornerShadow()
@@ -46,10 +46,10 @@ class ViewController: UIViewController {
 
         //createing a trapezoidal path for shadow
         var path = UIBezierPath()
-        path.moveToPoint(CGPointMake(size.width * 0.20, size.height * 0.80))
+        path.moveToPoint(CGPointMake(size.width * 0.17, size.height * 0.80))
         path.addLineToPoint(CGPointMake(size.width * 0.80, size.height * 0.80))
         path.addLineToPoint(CGPointMake(size.width * 1.20, size.height * 1.20))
-        path.addLineToPoint(CGPointMake(size.width * -0.20, size.height * 1.20))
+        path.addLineToPoint(CGPointMake(size.width * -0.23, size.height * 1.20))
         path.closePath()
 
         //applying path as shadow to image
@@ -103,14 +103,14 @@ class ViewController: UIViewController {
         var path = UIBezierPath()
         
         //strating from left pont
-        path.moveToPoint(CGPointZero)
+        path.moveToPoint(CGPointMake(0.0, size.height))
         path.addLineToPoint(CGPointMake(0.0, size.height + 20.0))
         
         //curved bottom part
         path.addCurveToPoint(CGPointMake(size.width, size.height + 20.0), controlPoint1: CGPointMake(20.0, size.height), controlPoint2: CGPointMake(size.width - 20.0, size.height))
 
         //closing the path by going upper top part
-        path.addLineToPoint(CGPointMake(size.width, 0.0))
+        path.addLineToPoint(CGPointMake(size.width, size.height))
         
         //close the path and apply the path as shadow
         path.closePath()
